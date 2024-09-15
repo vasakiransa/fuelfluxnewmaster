@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FuelFlex</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav
+      class="min-h-36 p-3 bg-[#b5dda6] flex justify-between items-center fixed w-screen z-50"
+    >
+      <!-- Logo -->
+      <a href="#" id="Logo" class="relative flex justify-center lg:left-32">
+        <img
+          class="object-cover relative h-7 sm:h-7 md:h-7 lg:h-9"
+          src="./assets/logo.svg"
+          alt="Logo"
+        />
+      </a>
+
+      <!-- Navbar Links (centered on larger screens) -->
+      <ul
+        class="hidden sm:flex sm:justify-center sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:space-x-8 sm:text-lg md:space-x-8 lg:text-xl"
+      >
+        <li>
+          <a href="#">Products <i class="fa regular fa-angle-down"></i> </a>
+        </li>
+        <li><a href="#">Contact Us</a></li>
+        <li>
+          <a href="#">FAQ <i class="fa regular fa-angle-down"></i> </a>
+        </li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+
+      <button class="sm:hidden p-6" onclick="handleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Hamburger Menu (visible on small screens only) -->
+      <div
+        id="nav-dialog"
+        class="hidden fixed z-10 sm:hidden bg-[#b5dda6] inset-0"
+      >
+        <div id="nav-bar" class="flex justify-between p-5 mt-9">
+          <a href="#" id="Logo" class="relative flex justify-center lg:left-32">
+            <img
+              class="object-cover relative h-7 sm:h-7 md:h-7 lg:h-9"
+              src="./assets/logo.svg"
+              alt="Logo"
+            />
+          </a>
+          <button class="sm:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Links inside Hamburger Menu (Column Stack) -->
+        <ul class="flex flex-col items-center space-y-6 mt-10 text-lg">
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">Products</a>
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">Contact Us</a>
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">FAQ</a>
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">About Us</a>
+          </li>
+        </ul>
+        <!-- Optional: Social Media Icons -->
+        <div class="flex justify-between mx-20 space-x-4 mt-10">
+          <a href="#"
+            ><i class="fa-brands fa-facebook text-2xl text-[#002C15]"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-twitter text-2xl text-[#002C15]"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-instagram text-2xl text-[#002C15]"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Section -->
+    <main class="bg-[#002c15] pt-40">
+      <!-- Hero Section -->
+      <div id="hero-section" class="min-h-screen">
+        <div id="hero-container" class="max-w-4xl mx-auto px-6 flex flex-col">
+          <!-- <div id="version-text" class="flex my-6 gap-2"> -->
+          <div class="flex justify-center mt-8">
+            <button
+              class="relative flex items-center bg-[#f4ffd6] text-[#0d1712] font-graphik-medium text-xs rounded-full px-2 py-1.5 font-[550] w-fit cursor-pointer sm:text-base sm:px-3 lg:py-1 md:py-1"
+            >
+              <span
+                class="bg-[#c1f23b] text-[#002c15] text-xs font-[450] rounded-full px-3 py-1 mr-3 sm:text-base"
+                >New</span
+              >
+              Gas Station Provider
+              <i class="fa-solid fa-arrow-right ml-4 text-lg"></i>
+            </button>
+          </div>
+
+          <!-- </div> -->
+          <div id="h1-p-conatiner" class="text-center lg:mt-8">
+            <h1
+              class="text-3xl font-semibold text-[#ffffff] font-graphik-medium pt-5 items-center sm:text-5xl sm:font-semibold md:text-6xl md:font-semibold lg:text-7xl lg:font-semibold"
+            >
+              Your On-Demand <br />
+              Fuel Booking Service
+            </h1>
+
+            <!-- Paragraph for smaller screens -->
+            <p class="text-[#c6d0cb] my-2 text-sm sm:hidden">
+              Whether you're at home, at work, or on the go,<br />
+              Fuel Flux ensures you never run out of fuel.
+            </p>
+
+            <!-- Paragraph for larger screens -->
+            <p
+              class="text-[#c6d0cb] my-2 text-lg md:text-xl hidden sm:block mt-8"
+            >
+              Whether you're at home, at work, or on the go, Fuel Flux ensures
+              you <br />
+              never run out of fuel.
+            </p>
+
+            <div
+              id="GoogleAppStore-Buttons-Conatiner"
+              class="flex justify-center mt-7 lg:mt-11"
+            >
+              <button
+                class="bg-[#c3f53c] mx-2 rounded-full px-4 py-2 text-[#327d5f] font-graphik-medium flex items-center sm:px-10 sm:py-3 lg:px-16 lg:py-4 md:px-12 md:py-3"
+              >
+                <i
+                  class="fa-brands fa-google-play text-lg mr-2 sm:text-2xl lg:text-3xl"
+                ></i>
+                <div class="text-center leading-tight">
+                  <span
+                    class="text-[0.55rem] block font-semibold mr-11 font-graphik-medium"
+                    >GET IT ON</span
+                  >
+                  <span
+                    class="text-sm font-semibold block font-graphik-medium sm:text-base md:text-base lg:text-base"
+                    >Google Play</span
+                  >
+                </div>
+              </button>
+
+              <button
+                class="border-[#c3f53c] border-2 mx-2 rounded-full px-4 py-2 text-xs text-[#c2f43c] flex items-center sm:px-10 sm:py-3 lg:px-16 lg:py-4 md:px-12 md:py-3"
+              >
+                <i
+                  class="fa-brands fa-apple text-lg mr-2 sm:text-3xl md:text-3xl lg:text-4xl"
+                ></i>
+                <div class="text-left leading-tight">
+                  <span
+                    class="lg:text-[0.55rem] block text-[0.45rem] font-semibold font-graphik-medium"
+                    >DOWNLOAD ON THE</span
+                  >
+                  <span
+                    class="block font-semibold font-graphik-medium lg:text-base"
+                    >App Store</span
+                  >
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Palm Mobile Section -->
+        <div
+          class="top-0 flex justify-center items-center sm:relative sm:top-[-56px]"
+        >
+          <img
+            class="h-40 w-40 lg:h-2/5 lg:w-2/5 md:h-2/5 md:w-2/5 sm:h-2/4 sm:w-2/4"
+            src="./assets/palm-mobile-1.png"
+            alt="palm-mobile-1"
+          />
+          <img
+            class="relative top-5 h-40 w-40 lg:h-2/5 lg:w-2/5 md:h-2/5 md:w-2/5 sm:h-2/4 sm:w-2/4"
+            src="./assets/palm-mobile-2.png"
+            alt="palm-mobile-2"
+          />
+        </div>
+        <!-- "Fast & Secure" Section -->
+        <div
+          id="fastAndSecure"
+          class="max-w-full mx-auto px-6 relative flex flex-col justify-center bg-[#ffffff] rounded-3xl text-center sm:bottom-24 lg:bottom-36"
+        >
+          <div id="Logo-Ticker" class="flex justify-center items-center mt-4">
+            <img src="./assets/Logo Ticker.svg" alt="" />
+          </div>
+          <div id="Heading" class="mt-4">
+            <h1
+              class="font-graphik-medium font-semibold text-[#002c15] text-2xl sm:text-4xl md:text-5xl md:m-5 lg:text-6xl"
+            >
+              We offer fast and secure <br />
+              money transfers
+            </h1>
+          </div>
+          <div
+            id="personal-business-conatiner"
+            class="font-graphik-medium flex flex-col justify-center gap-4 m-5 sm:flex-row sm:gap-14 md:gap-14 lg:m-7"
+          >
+            <div
+              id="personal"
+              class="bg-[#002c15] rounded-3xl text-center p-5 lg:p-16"
+            >
+              <h1
+                class="text-[#c3f53c] sm:text-xl sm:m-2 md:text-2xl lg:text-5xl lg:p-4"
+              >
+                For Personal
+              </h1>
+              <!-- Paragraph for smaller screens -->
+              <p class="text-xs text-[#c6d0cb] sm:hidden">
+                Moving over city ? Paying for fuel or bill in another<br />
+                city? You can book in 75+ fuel stations over<br />
+                city anytime with ease.
+              </p>
+
+              <!-- Paragraph for sm upto md breakpoint -->
+              <p class="text-base text-[#c6d0cb] hidden sm:block md:hidden">
+                Moving over city ? Paying for <br />fuel or bill in another
+                city? <br />You can book in 75+ fuel<br />
+                stations over city anytime<br />
+                with ease.
+              </p>
+
+              <!-- Paragraph for md screens and larger -->
+              <p class="text-lg text-[#c6d0cb] hidden md:block lg:hidden">
+                Moving over city ? Paying for<br />
+                fuel or bill in another city? You<br />
+                can book in 75+ fuel stations<br />
+                over city anytime with ease.
+              </p>
+
+              <!-- Paragraph for lg screens and larger -->
+              <p class="text-xl text-[#c6d0cb] hidden lg:block">
+                Moving over city ? Paying for fuel or bill in another<br />
+                city? You can book in 75+ fuel stations over<br />
+                city anytime with ease.
+              </p>
+
+              <button
+                class="bg-[#c3f53c] m-3 rounded-full p-2.5 text-xs sm:text-base sm:p-4 sm:mt-5 md:text-lg"
+              >
+                Personal <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
+              <div
+                id="personal-frame"
+                class="relative top-5 sm:top-5 lg:top-16"
+              >
+                <img src="./assets/personal-frame.svg" alt="personalFrame" />
+              </div>
+            </div>
+            <div
+              id="business"
+              class="bg-[#002c15] rounded-3xl text-center p-5 lg:p-16"
+            >
+              <h1
+                class="text-[#c3f53c] sm:text-xl sm:m-2 md:text-2xl lg:text-5xl lg:p-4"
+              >
+                For Businesses
+              </h1>
+              <!-- Paragraph for smaller screens -->
+              <p class="text-xs text-[#c6d0cb] sm:hidden">
+                Receive payment, pay staff, invoices or supplies. We<br />
+                can seamlessly integrate a solution for your business<br />
+                whenever you want to use it
+              </p>
+
+              <!-- Paragraph for sm and larger screens -->
+              <p class="text-base text-[#c6d0cb] hidden sm:block md:hidden">
+                Receive payment, pay staff,<br />
+                invoices or supplies. We<br />
+                can seamlessly integrate a<br />
+                solution for your business<br />
+                whenever you want to use it
+              </p>
+
+              <!-- Paragraph for md and larger screens -->
+              <p class="text-lg text-[#c6d0cb] hidden md:block lg:hidden">
+                Receive payment, pay staff,<br />
+                invoices or supplies. We can<br />
+                seamlessly integrate a solution for <br />your business
+                whenever<br />
+                you want to use it
+              </p>
+
+              <!-- Paragraph for lg and larger screens -->
+              <p class="text-xl text-[#c6d0cb] hidden lg:block">
+                Receive payment, pay staff, invoices or supplies. We<br />
+                can seamlessly integrate a solution for your business<br />
+                whenever you want to use it
+              </p>
+
+              <button
+                class="bg-[#c3f53c] m-3 rounded-full text-xs p-2.5 sm:text-base sm:p-4 sm:mt-5"
+              >
+                Business<i class="fa-solid fa-arrow-right ml-2.5"></i>
+              </button>
+              <div
+                id="business-frame"
+                class="relative top-5 sm:top-10 md:top-6 lg:top-28"
+              >
+                <img src="./assets/Business-Frame.svg" alt="business-frame" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Why FuleFlux? -->
+      <div
+        id="whyFuelFlux"
+        class="max-w-full bg-[#f2f5f7] -mt-5 sm:-mt-32 lg:-mt-44"
+      >
+        <div
+          id="FuelFlux-Container"
+          class="flex flex-col sm:flex-row justify-evenly sm:p-16 p-12 lg:p-24"
+        >
+          <div id="Left-Content">
+            <span
+              class="font-graphik-medium text-[#808080] text-xs underline decoration-[#c3f53c] sm:text-base lg:text-xl"
+              >Why FuleFlux?</span
+            >
+            <div class="my-2">
+              <h1
+                class="text-[#002c15] font-graphik-medium font-semibold text-lg leading-tight sm:text-3xl md:text-4xl lg:text-6xl lg:my-5"
+              >
+                We are the first CNG <br />
+                booking provider
+              </h1>
+            </div>
+            <div id="Fast-text" class="lg:mt-5">
+              <div>
+                <p
+                  class="text-[#808080] text-xs font-graphik-medium sm:text-sm md:text-base lg:text-2xl mt-3 lg:my-5"
+                >
+                  Fast, flexible and reliable CNG booking across the city
+                </p>
+              </div>
+            </div>
+            <div class="mt-3 sm:mt-7 lg:mt-10">
+              <button
+                class="text-xs bg-[#c3f53c] rounded-full p-2 md:p-4 md:text-base lg:p-10 lg:text-xl lg:py-4"
+              >
+                Create Account
+                <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+              </button>
+            </div>
+          </div>
+          <div id="right-side" class="flex items-center mt-11 lg:mt-0">
+            <div>
+              <img
+                class="h-40 md:h-56 lg:h-96"
+                src="./assets/Scooter.svg"
+                alt="Scooter"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="mx-5 mb-5">
+            <img src="./assets/Scooter-Frame.svg" alt="Scooter-Frame" />
+          </div>
+        </div>
+      </div>
+      <!-- Multi-Currency-Section -->
+      <div id="multi-currency-account" class="max-w-full bg-white">
+        <div
+          id="multi-currency-container"
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-5 lg:p-20"
+        >
+          <div id="left-side-container">
+            <span
+              class="font-graphik-medium text-[#808080] text-xs underline decoration-[#c3f53c] sm:text-base lg:text-xl"
+              >Multi-currency account</span
+            >
+            <div class="my-2">
+              <h1
+                class="text-[#002c15] font-graphik-medium font-semibold text-lg leading-tight sm:text-3xl md:text-4xl lg:text-6xl"
+              >
+                One account for<br />
+                35+ cities<br />
+                across India.
+              </h1>
+            </div>
+            <div id="hold-over-text" class="lg:mt-5">
+              <div>
+                <p
+                  class="text-[#808080] text-xs font-graphik-medium sm:text-sm md:text-base lg:text-xl"
+                >
+                  Hold over station spread across the 35+ cities<br />
+                  around you, when you need it.
+                </p>
+              </div>
+            </div>
+            <div
+              class="text-xs text-[#808080] mt-1 sm:mt-2 sm:text-sm md:text-base md:mt-3 lg:text-lg lg:mt-4"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                One account, multiple vehicles
+              </p>
+            </div>
+            <div
+              class="text-xs text-[#808080] mt-1 sm:text-sm md:mt-3 md:text-base sm:mt-2 lg:text-lg lg:mt-4"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Regulated & secure
+              </p>
+            </div>
+            <div
+              class="text-xs md:text-base md:mt-3 text-[#808080] mt-1 sm:text-sm sm:mt-2 lg:text-lg lg:mt-4"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Trade on your own terms
+              </p>
+            </div>
+            <div class="mt-4 md:mt-7">
+              <button
+                class="text-xs bg-[#c3f53c] rounded-full p-2 md:p-4 md:text-base lg:p-10 lg:text-lg lg:py-4"
+              >
+                Learn More <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            id="right-side-container"
+            class="bg-[#f2f5f7] flex justify-center items-center rounded-3xl p-5"
+          >
+            <div id="currency-image-holder" class="p-5">
+              <img
+                src="./assets/multi-currency.svg"
+                alt="multi-currency"
+                class="w-auto h-auto max-w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Schedule-Bookings-Section -->
+      <div id="schedule-bookings">
+        <div
+          id="schedule-bookings-container"
+          class="flex flex-row gap-4 p-5 sm:p-10 sm:justify-evenly lg:p-20"
+        >
+          <div
+            id="left-side-container"
+            class="max-w-xs sm:max-w-xs md:max-w-sm lg:max-w-4xl"
+          >
+            <div id="phone-image-holder" class="p-5">
+              <img
+                class="h-48 sm:h-auto sm:w-auto"
+                src="./assets/Schedule-Booking.svg"
+                alt="schedule-bookings"
+              />
+            </div>
+          </div>
+          <div id="right-side-container">
+            <h1
+              class="font-graphik-medium font-medium decoration-3 text-[#b4ce73] text-xs underline decoration-[#50a04e] sm:text-base lg:text-2xl"
+            >
+              Schedule Bookings
+            </h1>
+
+            <div class="my-2">
+              <h1
+                class="text-white font-graphik-medium text-lg leading-tight sm:text-3xl md:text-4xl lg:text-7xl lg:my-4"
+              >
+                Your time,<br />
+                Your station,<br />
+                Few clicks away
+              </h1>
+            </div>
+            <div id="hold-over-text" class="lg:mt-5">
+              <div>
+                <p
+                  class="text-[#c6d0cb] text-xs font-graphik-medium sm:text-sm md:text-base lg:text-3xl"
+                >
+                  Enjoy the flexibility of a Payment. Spend anythime,<br />
+                  anywhere around the world.
+                </p>
+              </div>
+            </div>
+            <div
+              class="text-xs text-[#c6d0cb] mt-1 sm:mt-2 sm:text-sm md:text-base md:mt-3 lg:text-2xl lg:mt-5"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Real-Time Tracking
+              </p>
+            </div>
+            <div
+              class="text-xs text-[#c6d0cb] mt-1 sm:text-sm md:mt-3 md:text-base sm:mt-2 lg:text-2xl lg:mt-5"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Pay after you fill
+              </p>
+            </div>
+            <div
+              class="text-xs md:text-base md:mt-3 text-[#c6d0cb] mt-1 sm:text-sm sm:mt-2 lg:text-2xl lg:mt-5"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Rescheduling and Cancellations
+              </p>
+            </div>
+            <div class="mt-4 md:mt-7 lg:mt-11">
+              <button
+                class="text-xs bg-[#c3f53c] rounded-full p-2 md:p-4 md:text-base lg:px-11 lg:text-2xl lg:py-5"
+              >
+                Learn More
+                <i class="fa-solid fa-arrow-right ml-1 text-xs lg:text-2xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- One-App-For-All-Section -->
+      <div id="One-App-For-All" class="max-w-full bg-[#f2f5f7]">
+        <div
+          id="multi-currency-container"
+          class="flex flex-row sm:flex-row gap-4 p-5 sm:p-10 sm:justify-evenly lg:p-20"
+        >
+          <div id="left-side-container">
+            <span
+              class="font-graphik-medium text-[#002c15] text-xs underline decoration-[#c3f53c] sm:text-base lg:text-xl"
+              >Multi-currency account</span
+            >
+            <div class="my-2">
+              <h1
+                class="text-[#002c15] font-graphik-medium font-semibold text-lg leading-tight sm:text-3xl md:text-4xl lg:text-6xl"
+              >
+                One app for all<br />
+                of your fuel<br />
+                payment
+              </h1>
+            </div>
+            <div id="hold-over-station" class="lg:mt-5">
+              <div class="lg:my-8">
+                <p
+                  class="text-[#808080] text-xs font-graphik-medium sm:text-sm md:text-base lg:text-2xl"
+                >
+                  Manage all your fuel bookings and payments<br />
+                  effortlessly in one place, saving you time<br />
+                  and hassle with every refuel.
+                </p>
+              </div>
+            </div>
+            <div
+              class="text-xs text-[#808080] mt-1 sm:mt-2 sm:text-sm md:text-base md:mt-3 lg:text-xl lg:mt-4"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Secure Transactions
+              </p>
+            </div>
+            <div
+              class="text-xs text-[#808080] mt-1 sm:text-sm md:mt-3 md:text-base sm:mt-2 lg:text-xl lg:mt-4"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Flexible Payment Options
+              </p>
+            </div>
+            <div
+              class="text-xs md:text-base md:mt-3 text-[#808080] mt-1 sm:text-sm sm:mt-2 lg:text-xl lg:mt-4"
+            >
+              <p>
+                <i
+                  class="fa-solid fa-check bg-[#c3f53c] rounded-full md:p-1"
+                  style="color: #000000"
+                ></i>
+                Unified Platform
+              </p>
+            </div>
+            <div
+              id="GoogleAppStore-Buttons"
+              class="flex flex-col lg:flex-row gap-2 mt-7 lg:mt-11"
+            >
+              <!-- Google Play Button -->
+              <button
+                class="bg-[#002c15] mx-2 rounded-full px-4 py-2 text-[#c3f53c] justify-center font-graphik-medium flex items-center sm:px-8 sm:py-3 lg:px-10 lg:py-3"
+              >
+                <i
+                  class="fa-brands fa-google-play text-lg mr-2 sm:text-xl lg:text-2xl"
+                ></i>
+                <div class="text-center leading-tight">
+                  <span
+                    class="lg:text-sm block text-[0.6rem] font-semibold xl:mr-8 font-graphik-medium"
+                    >GET IT ON</span
+                  >
+                  <span
+                    class="text-xs block font-graphik-medium sm:text-base md:text-base lg:text-sm"
+                    >GooglePlay</span
+                  >
+                </div>
+              </button>
+
+              <!-- App Store Button -->
+              <button
+                class="bg-[#002c15] rounded-full px-4 py-2 text-xs text-[#c2f43c] flex items-center justify-center sm:px-8 sm:py-3 lg:px-10 lg:py-3"
+              >
+                <i
+                  class="fa-brands fa-apple text-lg mr-2 sm:text-xl md:text-2xl lg:text-2xl"
+                ></i>
+                <div class="text-left leading-tight">
+                  <span
+                    class="lg:text-sm block text-[0.6rem] font-semibold font-graphik-medium"
+                    >DOWNLOAD ON THE</span
+                  >
+                  <span
+                    class="block font-semibold text-xs font-graphik-medium lg:text-sm"
+                    >AppStore</span
+                  >
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="right-side-container">
+            <div id="currency-image-holder" class="p-5">
+              <img
+                class="h-52 sm:h-60 md:h-96 lg:h-auto sm:w-auto"
+                src="./assets/One-App-for-all.svg"
+                alt="One-App-For-All"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Customer-Success-Section -->
+      <div id="Customer-Success-Section" class="bg-white">
+        <div id="Customer-Success-Container">
+          <div id="Customer-Sucess-Container" class="p-10 lg:p-24">
+            <span
+              class="font-graphik-medium text-[#002c15] text-xs underline decoration-[#c3f53c] sm:text-base md:text-lg lg:text-2xl lg:font-semibold"
+              >Customer Series</span
+            >
+
+            <div id="Customer-Success-text" class="my-3 lg:my-10">
+              <h1
+                class="font-graphik-medium font-semibold leading-tight text-[#002c15] sm:text-2xl md:text-3xl lg:text-7xl"
+              >
+                Customer success is <br />
+                our success
+              </h1>
+            </div>
+            <div id="customer-success-img">
+              <img src="./assets/Testimonials.svg" alt="Testimonials" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Promotion Section -->
+      <div id="promotion-section" class="max-w-full bg-[#f2f5f7]">
+        <div
+          id="section placeholder"
+          class="grid grid-cols-2 p-5 sm:p-10 md:p-12 lg:p-16 xl:p-28"
+        >
+          <div
+            id="Left-Side"
+            class="bg-[#002c15] sm:p-7 p-4 rounded-l-2xl md:p-12 xl:p-24"
+          >
+            <span
+              class="font-graphik-medium text-white text-[0.8rem] underline decoration-[#c3f53c] sm:text-base md:text-lg lg:text-xl lg:font-semibold"
+              >Promotion</span
+            >
+
+            <div class="mt-1">
+              <h1
+                class="text-lg sm:text-2xl md:text-3xl text-white leading-tight lg:text-4xl xl:text-7xl"
+              >
+                Get a Zero-fee on<br />
+                your first transfer
+              </h1>
+            </div>
+
+            <div class="py-2 md:py-4 xl:mt-4">
+              <p
+                class="text-[0.5rem] text-[#c6d0cb] sm:text-xs md:text-[0.8rem] lg:text-base xl:text-2xl"
+              >
+                Manage all your fuel bookings and payments<br />
+                effortlessly in one place, saving you time<br />
+                and hassle with every refuel.
+              </p>
+            </div>
+            <div class="sm:mt-2 md:mt-4 lg:mt-5">
+              <button
+                class="text-[0.5rem] sm:text-xs bg-[#c3f53c] rounded-full p-2 md:p-3 md:text-base lg:px-5 lg:text-2xl lg:py-3"
+              >
+                Learn More
+                <i
+                  class="fa-solid fa-arrow-right ml-1 text-[0.5rem] sm:text-xs lg:text-lg"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="right-side"
+            class="bg-[#002c15] rounded-r-2xl flex justify-center items-center"
+          >
+            <img src="./assets/promotion.svg" alt="promotion" />
+          </div>
+        </div>
+      </div>
+      <!-- FAQ-Section -->
+      <div id="FAQ-Section" class="max-w-full bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-10 gap-4 p-4">
+          <!-- Left Section: 30% of the width -->
+          <div class="md:col-span-3 p-6 lg:col-span-3">
+            <span
+              class="font-graphik-medium text-[#002c15] text-xs underline decoration-[#c3f53c] sm:text-base md:text-lg lg:text-2xl font-semibold"
+              >Here to help</span
+            >
+            <div class="py-2">
+              <h2 class="text-[#002c15] text-2xl leading-tight font-semibold">
+                Common Questions
+              </h2>
+            </div>
+            <div class="py-2">
+              <p class="text-gray-600">
+                Find answers to frequently asked questions here.
+              </p>
+            </div>
+
+            <div class="flex">
+              <div
+                class="inline-flex items-center justify-center w-5 h-5 rounded-full border-2 border-black"
+              >
+                <i class="fa-solid fa-question text-xs"></i>
+              </div>
+              <p class="text-[#808080] ml-1.5">need further support?</p>
+            </div>
+            <button
+              class="text-[0.8rem] mt-4 sm:text-xs bg-[#c3f53c] rounded-full p-2 md:p-3 md:text-base lg:px-5 lg:text-2xl lg:py-3"
+            >
+              Learn More
+              <i
+                class="fa-solid fa-arrow-right ml-1 text-[0.5rem] sm:text-xs lg:text-lg"
+              ></i>
+            </button>
+          </div>
+
+          <!-- Right Section: 70% of the width (FAQ Section) -->
+          <div class="md:col-span-7 bg-white p-6 lg:col-span-7">
+            <div class="faq-item w-full">
+              <div
+                id="FAQ-1"
+                class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto"
+              >
+                <div class="flex justify-between">
+                  <h1
+                    class="leading-tight font-semibold text-[#1C432F] md:text-lg lg:text-xl"
+                  >
+                    How do I register a Payment personal account?
+                  </h1>
+                  <button
+                    class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
+                  >
+                    <i
+                      class="fa-solid fa-chevron-down transform rotate-180"
+                    ></i>
+                  </button>
+                </div>
+
+                <div class="mt-2">
+                  <p
+                    class="text-[0.6rem] text-[#1C432F] md:text-sm lg:text-base"
+                  >
+                    Simply download the app, create an account, enter your
+                    delivery <br />
+                    location, select the type and amount of fuel you need, and
+                    place <br />
+                    your order. Our delivery team will bring the fuel directly
+                    to you.<br />
+                    We will work to resolve the problem as quickly as possible.
+                  </p>
+                </div>
+              </div>
+              <div
+                id="FAQ-2"
+                class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
+              >
+                <div class="flex justify-between">
+                  <h1
+                    class="leading-tight text-[#1C432F] font-semibold md:text-lg"
+                  >
+                    What if I need to cancel or modify my order?
+                  </h1>
+                  <button
+                    class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+                id="FAQ-3"
+                class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
+              >
+                <div class="flex justify-between">
+                  <h1
+                    class="leading-tight text-[#1C432F] font-semibold md:text-lg"
+                  >
+                    How can I provide feedback on my experience?
+                  </h1>
+                  <button
+                    class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+                id="FAQ-4"
+                class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
+              >
+                <div class="flex justify-between">
+                  <h1
+                    class="leading-tight text-[#1C432F] font-semibold md:text-lg"
+                  >
+                    What types of fuel can I order?
+                  </h1>
+                  <button
+                    class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+                id="FAQ-5"
+                class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
+              >
+                <div class="flex justify-between">
+                  <h1
+                    class="leading-tight text-[#1C432F] font-semibold md:text-lg"
+                  >
+                    What payment methods are accepted?
+                  </h1>
+                  <button
+                    class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Ready-To-Get-Started-Section -->
+        <div id="setUpandSave">
+          <div
+            id="readyToGetContainer"
+            class="bg-[#002c15] flex flex-col items-center justify-center p-7 md:p-20"
+          >
+            <div id="ReadyContainer">
+              <p
+                class="text-white underline decoration-[#c3f53c] mt-7 font-graphik-medium text-xs sm:text-base md:text-lg"
+              >
+                Ready to get started
+              </p>
+            </div>
+            <div id="SetupAndSave" class="flex text-center mt-3">
+              <h3
+                class="text-white font-semibold text-xl sm:text-3xl md:text-4xl lg:text-5xl"
+              >
+                Set up and Save your time on <br />
+                your next fuel booking
+              </h3>
+            </div>
+            <button
+              class="text-[0.8rem] mt-4 sm:mt-5 md:mt-7 sm:text-base bg-[#c3f53c] sm:p-4 rounded-full p-2 md:p-3 md:text-base lg:px-5 lg:text-2xl lg:py-3"
+            >
+              Get Started Now
+              <i
+                class="fa-solid fa-arrow-right ml-1 text-xs sm:text-base lg:text-lg"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <!-- FOOTER -->
+  <footer class="bg-[#f2f5f7] p-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      <!-- Logo -->
+      <div id="Logo-Footer">
+        <img src="./assets/logo.svg" alt="Company Logo" class="w-32" />
+      </div>
+
+      <!-- Product -->
+      <div id="Product-Div">
+        <h3 class="text-lg font-semibold mb-4 text-[#1C432F]">Product</h3>
+        <ul>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">For Personal</a>
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">For Business</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div id="Company-Div">
+        <h3 class="text-lg font-semibold mb-4 text-[#1C432F]">Company</h3>
+        <ul>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white"
+              >Customer Story</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">Careers</a>
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div id="Resources">
+        <h3 class="text-lg font-semibold mb-4 text-[#1C432F]">Resources</h3>
+        <ul>
+          <li><a href="#" class="text-[#002C15] hover:text-white">Blog</a></li>
+          <li><a href="#" class="text-[#002C15] hover:text-white">FAQ</a></li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white">Help Center</a>
+          </li>
+          <li>
+            <a href="#" class="text-[#002C15] hover:text-white"
+              >Terms and Privacy</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Download App -->
+      <div id="Download-App" class="">
+        <h3 class="text-lg font-semibold mb-4">Download App</h3>
+        <div class="flex sm:flex-col sm:gap-3 w-auto sm:w-max">
+          <button class="bg-[#002c15] p-3 rounded-full flex gap-2 items-center">
+            <i
+              class="fa-brands fa-google-play"
+              style="color: #1aff47"
+              class="text-2xl mr-2"
+            ></i>
+            <span class="text-sm text-[#c3f53c]">Google Play</span>
+          </button>
+          <button
+            class="border-[#1c432f] border-2 mx-2 gap-2 p-3 rounded-full flex items-center"
+          >
+            <i
+              class="fa-brands fa-apple sm:text-xl"
+              style="color: #1c432f"
+              class="text-2xl mr-2"
+            ></i>
+            <span class="text-sm text-[#1c432f] sm:text-base">App Store</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-[1px] bg-[#e1e3e5] mt-12"></div>
+
+    <!-- Footer Bottom Section -->
+    <div
+      class="bg-[#f2f5f7] py-6 px-10 flex flex-col sm:flex-row justify-between items-center"
+    >
+      <!-- Left Section: Copyright and Made in Digifrills -->
+      <div
+        class="text-center sm:text-left gap-3 lg:gap-6 md:flex sm:justify-between"
+      >
+        <p class="text-sm lg:text-xl text-[#1c432f]">Copyright@2024BrainFlow</p>
+        <p class="text-sm lg:text-xl text-[#1c432f]">Made in Digifrills</p>
+      </div>
+
+      <!-- Social Media Icons -->
+      <div class="flex gap-4 mt-4 sm:mt-0 lg:gap-10">
+        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
+          <i class="fab fa-facebook-f text-xl lg:text-4xl"></i>
+        </a>
+        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
+          <i class="fab fa-instagram text-xl lg:text-4xl"></i>
+        </a>
+        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
+          <i class="fab fa-telegram text-xl lg:text-4xl"></i>
+        </a>
+        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
+          <i class="fab fa-twitter text-xl lg:text-4xl"></i>
+        </a>
+      </div>
+
+      <!-- Language Selector -->
+      <div class="mt-4 gap-3 sm:mt-0 flex">
+        <select
+          class="flex-1 border-2 border-[#002c15] text-[#1c432f] bg-transparent p-3 lg:px-10 rounded-full font-semibold"
+        >
+          <option class="font-semibold">English</option>
+          <!-- Add more languages here -->
+        </select>
+        <button
+          class="w-5 h-5 sm:w-7 sm:h-7 md:h-9 md:w-9 bg-[#1c432f] rounded-full text-white flex items-center justify-center hover:bg-[#145029] ml-3"
+        >
+          <i class="fa-solid fa-angle-up lg:text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</html>
