@@ -29,7 +29,9 @@
         class="hidden sm:flex sm:justify-center sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:space-x-8 sm:text-lg md:space-x-8 lg:text-xl"
       >
         <li>
-          <a href="#">Products <i class="fa regular fa-angle-down"></i> </a>
+          <a href="#" onclick="openModal()"
+            >Products <i class="fa regular fa-angle-down"></i>
+          </a>
         </li>
         <li><a href="#">Contact Us</a></li>
         <li>
@@ -37,6 +39,101 @@
         </li>
         <li><a href="#">About Us</a></li>
       </ul>
+
+      <!-- Modal for Products -->
+      <div
+        id="productsModal"
+        class="fixed inset-0 hidden z-50 bg-black bg-opacity-50 flex justify-center items-center"
+      >
+        <div class="bg-white w-11/12 sm:w-1/2 rounded-lg shadow-lg p-8">
+          <!-- Close Button -->
+          <div class="flex justify-end mb-4">
+            <button
+              class="text-[#002C15] hover:text-red-500"
+              onclick="closeModal()"
+            >
+              <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+          </div>
+
+          <h2 class="text-2xl mb-4">Products</h2>
+
+          <!-- Tabs for Personal and Businesses -->
+          <div class="flex space-x-4 mb-6">
+            <button
+              id="personalTab"
+              class="p-2 bg-gray-200 rounded-lg"
+              onclick="showPersonal()"
+            >
+              Personal
+            </button>
+            <button
+              id="businessTab"
+              class="p-2 bg-gray-200 rounded-lg"
+              onclick="showBusiness()"
+            >
+              Businesses
+            </button>
+          </div>
+
+          <!-- Personal Form -->
+          <div id="personalForm" class="space-y-4">
+            <input
+              type="text"
+              placeholder="Name"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <input
+              type="tel"
+              placeholder="Contact Number"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <textarea
+              placeholder="Feedback/Suggestion"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            ></textarea>
+            <button class="bg-[#002C15] text-white p-3 rounded-lg">
+              Submit
+            </button>
+          </div>
+
+          <!-- Businesses Form -->
+          <div id="businessForm" class="hidden space-y-4">
+            <input
+              type="text"
+              placeholder="Name"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <input
+              type="tel"
+              placeholder="Contact Number"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <input
+              type="text"
+              placeholder="Business Type"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <textarea
+              placeholder="Inquiry Details"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            ></textarea>
+            <button class="bg-[#002C15] text-white p-3 rounded-lg">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
 
       <button class="sm:hidden p-6" onclick="handleMenu()">
         <i class="fa-solid fa-bars"></i>
@@ -62,7 +159,12 @@
         <!-- Links inside Hamburger Menu (Column Stack) -->
         <ul class="flex flex-col items-center space-y-6 mt-10 text-lg">
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white">Products</a>
+            <a
+              href="#"
+              onclick="openModal()"
+              class="text-[#002C15] hover:text-white"
+              >Products</a
+            >
           </li>
           <li>
             <a href="#" class="text-[#002C15] hover:text-white">Contact Us</a>
@@ -102,7 +204,7 @@
                 class="bg-[#c1f23b] text-[#002c15] text-xs font-[450] rounded-full px-3 py-1 mr-3 sm:text-base"
                 >New</span
               >
-              Gas Station Provider
+              Fuel Station Provider
               <i class="fa-solid fa-arrow-right ml-4 text-lg"></i>
             </button>
           </div>
@@ -175,28 +277,24 @@
         </div>
         <!-- Palm Mobile Section -->
         <div
-          class="top-0 flex justify-center items-center sm:relative sm:top-[-56px]"
+          class="flex justify-center items-center sm:relative sm:top-[-56px]"
         >
-          <img
-            class="h-40 w-40 lg:h-2/5 lg:w-2/5 md:h-2/5 md:w-2/5 sm:h-2/4 sm:w-2/4"
-            src="./assets/palm-mobile-1.png"
-            alt="palm-mobile-1"
-          />
-          <img
+          <img class="" src="./assets/Palm.svg" alt="palm-mobile-1" />
+          <!-- <img
             class="relative top-5 h-40 w-40 lg:h-2/5 lg:w-2/5 md:h-2/5 md:w-2/5 sm:h-2/4 sm:w-2/4"
             src="./assets/palm-mobile-2.png"
             alt="palm-mobile-2"
-          />
+          /> -->
         </div>
         <!-- "Fast & Secure" Section -->
         <div
           id="fastAndSecure"
-          class="max-w-full mx-auto px-6 relative flex flex-col justify-center bg-[#ffffff] rounded-3xl text-center sm:bottom-24 lg:bottom-36"
+          class="max-w-full mx-auto px-6 relative flex flex-col justify-center bg-[#ffffff] rounded-3xl text-center sm:bottom-24 lg:bottom-36 md:bottom-32 bottom-8"
         >
-          <div id="Logo-Ticker" class="flex justify-center items-center mt-4">
+          <!-- <div id="Logo-Ticker" class="flex justify-center items-center mt-4">
             <img src="./assets/Logo Ticker.svg" alt="" />
-          </div>
-          <div id="Heading" class="mt-4">
+          </div> -->
+          <div id="Heading" class="mt-8 lg:mt-16">
             <h1
               class="font-graphik-medium font-semibold text-[#002c15] text-2xl sm:text-4xl md:text-5xl md:m-5 lg:text-6xl"
             >
@@ -206,7 +304,7 @@
           </div>
           <div
             id="personal-business-conatiner"
-            class="font-graphik-medium flex flex-col justify-center gap-4 m-5 sm:flex-row sm:gap-14 md:gap-14 lg:m-7"
+            class="font-graphik-medium flex flex-col justify-center gap-4 m-5 sm:flex-row sm:gap-14 md:gap-14 lg:m-7 mt-10"
           >
             <div
               id="personal"
@@ -318,7 +416,7 @@
       <!-- Why FuleFlux? -->
       <div
         id="whyFuelFlux"
-        class="max-w-full bg-[#f2f5f7] -mt-5 sm:-mt-32 lg:-mt-44"
+        class="max-w-full bg-[#f2f5f7] -mt-14 sm:-mt-32 md:-mt-40 lg:-mt-44"
       >
         <div
           id="FuelFlux-Container"
@@ -327,13 +425,13 @@
           <div id="Left-Content">
             <span
               class="font-graphik-medium text-[#808080] text-xs underline decoration-[#c3f53c] sm:text-base lg:text-xl"
-              >Why FuleFlux?</span
+              >Why FuelFlux?</span
             >
             <div class="my-2">
               <h1
                 class="text-[#002c15] font-graphik-medium font-semibold text-lg leading-tight sm:text-3xl md:text-4xl lg:text-6xl lg:my-5"
               >
-                We are the first CNG <br />
+                We are the first Fuel <br />
                 booking provider
               </h1>
             </div>
@@ -342,7 +440,7 @@
                 <p
                   class="text-[#808080] text-xs font-graphik-medium sm:text-sm md:text-base lg:text-2xl mt-3 lg:my-5"
                 >
-                  Fast, flexible and reliable CNG booking across the city
+                  Fast, flexible and reliable fuel booking across the city
                 </p>
               </div>
             </div>
@@ -790,28 +888,29 @@
                     How do I register a Payment personal account?
                   </h1>
                   <button
+                    onclick="toggleFAQ('faq1')"
                     class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
                   >
                     <i
-                      class="fa-solid fa-chevron-down transform rotate-180"
+                      class="fa-solid fa-chevron-down transform"
+                      id="icon-faq1"
                     ></i>
                   </button>
                 </div>
-
-                <div class="mt-2">
+                <div id="faq1" class="mt-2 hidden">
                   <p
                     class="text-[0.6rem] text-[#1C432F] md:text-sm lg:text-base"
                   >
                     Simply download the app, create an account, enter your
-                    delivery <br />
-                    location, select the type and amount of fuel you need, and
-                    place <br />
-                    your order. Our delivery team will bring the fuel directly
-                    to you.<br />
-                    We will work to resolve the problem as quickly as possible.
+                    delivery location, select the type and amount of fuel you
+                    need, and place your order. Our delivery team will bring the
+                    fuel directly to you. We will work to resolve the problem as
+                    quickly as possible.
                   </p>
                 </div>
               </div>
+
+              <!-- FAQ-2 (Updated Answer) -->
               <div
                 id="FAQ-2"
                 class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
@@ -823,31 +922,26 @@
                     What if I need to cancel or modify my order?
                   </h1>
                   <button
+                    onclick="toggleFAQ('faq2')"
                     class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
                   >
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-chevron-down" id="icon-faq2"></i>
                   </button>
                 </div>
+                <div id="faq2" class="mt-2 hidden">
+                  <p
+                    class="text-[0.6rem] text-[#1C432F] md:text-sm lg:text-base"
+                  >
+                    You can simply log in to the app and select the cancel
+                    option from settings. To modify, you can easily do it from
+                    there as well, and it will take only a few steps.
+                  </p>
+                </div>
               </div>
+
+              <!-- FAQ-3 (Updated Answer) -->
               <div
                 id="FAQ-3"
-                class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
-              >
-                <div class="flex justify-between">
-                  <h1
-                    class="leading-tight text-[#1C432F] font-semibold md:text-lg"
-                  >
-                    How can I provide feedback on my experience?
-                  </h1>
-                  <button
-                    class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
-                  >
-                    <i class="fa-solid fa-chevron-down"></i>
-                  </button>
-                </div>
-              </div>
-              <div
-                id="FAQ-4"
                 class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
               >
                 <div class="flex justify-between">
@@ -857,14 +951,25 @@
                     What types of fuel can I order?
                   </h1>
                   <button
+                    onclick="toggleFAQ('faq3')"
                     class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
                   >
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-chevron-down" id="icon-faq3"></i>
                   </button>
                 </div>
+                <div id="faq3" class="mt-2 hidden">
+                  <p
+                    class="text-[0.6rem] text-[#1C432F] md:text-sm lg:text-base"
+                  >
+                    You can order a variety of fuels, including Petrol, Diesel,
+                    CNG, LNG, H2, and more.
+                  </p>
+                </div>
               </div>
+
+              <!-- FAQ-4 (Updated Answer) -->
               <div
-                id="FAQ-5"
+                id="FAQ-4"
                 class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto mt-3"
               >
                 <div class="flex justify-between">
@@ -874,10 +979,19 @@
                     What payment methods are accepted?
                   </h1>
                   <button
+                    onclick="toggleFAQ('faq4')"
                     class="text-[0.8rem] text-gray-500 bg-[#c3f53c] rounded-full h-6 w-7"
                   >
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-chevron-down" id="icon-faq4"></i>
                   </button>
+                </div>
+                <div id="faq4" class="mt-2 hidden">
+                  <p
+                    class="text-[0.6rem] text-[#1C432F] md:text-sm lg:text-base"
+                  >
+                    We accept all major payment methods, including net banking,
+                    card payments, cash, and UPI.
+                  </p>
                 </div>
               </div>
             </div>
@@ -930,10 +1044,20 @@
         <h3 class="text-lg font-semibold mb-4 text-[#1C432F]">Product</h3>
         <ul>
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white">For Personal</a>
+            <a
+              href="#"
+              class="text-[#002C15] hover:text-white"
+              onclick="openModal()"
+              >For Personal</a
+            >
           </li>
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white">For Business</a>
+            <a
+              href="#"
+              class="text-[#002C15] hover:text-white"
+              onclick="openModal()"
+              >For Business</a
+            >
           </li>
         </ul>
       </div>
@@ -950,9 +1074,7 @@
               >Customer Story</a
             >
           </li>
-          <li>
-            <a href="#" class="text-[#002C15] hover:text-white">Careers</a>
-          </li>
+
           <li>
             <a href="#" class="text-[#002C15] hover:text-white">Contact Us</a>
           </li>
@@ -963,16 +1085,77 @@
       <div id="Resources">
         <h3 class="text-lg font-semibold mb-4 text-[#1C432F]">Resources</h3>
         <ul>
-          <li><a href="#" class="text-[#002C15] hover:text-white">Blog</a></li>
           <li><a href="#" class="text-[#002C15] hover:text-white">FAQ</a></li>
           <li>
             <a href="#" class="text-[#002C15] hover:text-white">Help Center</a>
           </li>
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white"
+            <a
+              href="#"
+              class="text-[#002C15] hover:text-white"
+              onclick="openTermsModal()"
               >Terms and Privacy</a
             >
           </li>
+
+          <!-- Modal for Terms and Privacy -->
+          <div
+            id="termsModal"
+            class="fixed inset-0 hidden z-50 bg-black bg-opacity-50 flex justify-center items-center"
+          >
+            <div
+              class="bg-white w-11/12 sm:w-2/3 lg:w-1/2 max-h-[90vh] rounded-lg shadow-lg p-8 relative overflow-y-auto"
+            >
+              <!-- Close Button -->
+              <button
+                class="absolute top-4 right-4"
+                onclick="closeTermsModal()"
+              >
+                <i class="fa-solid fa-xmark text-2xl"></i>
+              </button>
+
+              <h2 class="text-2xl font-semibold mb-4">Terms and Privacy</h2>
+              <div
+                class="space-y-4 text-left text-sm text-[#1C432F] max-h-[60vh] overflow-y-auto"
+              >
+                <p>
+                  <strong>1. Acceptance of Terms</strong><br />
+                  By downloading, accessing, or using the Fuel Flux application,
+                  you agree to be bound by these terms and conditions, as well
+                  as our Privacy Policy. If you do not agree with any part of
+                  these terms, you should not use the application.
+                </p>
+
+                <p>
+                  <strong>2. User Registration</strong><br />
+                  To use certain features of the Fuel Flux application, you may
+                  need to register for an account. You agree to provide
+                  accurate, current, and complete information during the
+                  registration process and keep your account information
+                  updated.
+                </p>
+
+                <p>
+                  <strong>3. Intellectual Property</strong><br />
+                  All content, trademarks, and data on the Fuel Flux
+                  application, including but not limited to text, software,
+                  code, designs, graphics, and logos, are the property of Fuel
+                  Flux or its licensors. You may not use, copy, reproduce, or
+                  distribute any content without our prior written consent.
+                </p>
+
+                <p>
+                  <strong>4. Service Availability</strong><br />
+                  We strive to keep the Fuel Flux application operational at all
+                  times. However, we do not guarantee that the application will
+                  always be available or that it will function without errors or
+                  interruptions. We reserve the right to modify, suspend, or
+                  discontinue any part of the application at any time without
+                  notice.
+                </p>
+              </div>
+            </div>
+          </div>
         </ul>
       </div>
 

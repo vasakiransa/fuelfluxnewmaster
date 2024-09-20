@@ -1,0 +1,51 @@
+<div id="business" class="bg-[#002c15] relative rounded-3xl text-center p-5 lg:p-16 grid grid-rows-[auto,auto,1fr] h-[600px]">
+  <h1 class="text-[#c3f53c] sm:text-xl sm:m-2 md:text-2xl lg:text-5xl lg:p-4">
+    For Businesses
+  </h1>
+
+  <!-- Paragraph for smaller screens -->
+              <p class="text-xs text-[#c6d0cb] sm:hidden">
+                Receive payment, pay staff, invoices or supplies. We<br />
+                can seamlessly integrate a solution for your business<br />
+                whenever you want to use it
+              </p>
+
+              <!-- Paragraph for sm and larger screens -->
+              <p class="text-base text-[#c6d0cb] hidden sm:block md:hidden">
+                Receive payment, pay staff,<br />
+                invoices or supplies. We<br />
+                can seamlessly integrate a<br />
+                solution for your business<br />
+                whenever you want to use it
+              </p>
+
+              <!-- Paragraph for md and larger screens -->
+              <p class="text-lg text-[#c6d0cb] hidden md:block lg:hidden">
+                Receive payment, pay staff,<br />
+                invoices or supplies. We can<br />
+                seamlessly integrate a solution for <br />your business
+                whenever<br />
+                you want to use it
+              </p>
+
+              <!-- Paragraph for lg and larger screens -->
+              <p class="text-xl text-[#c6d0cb] hidden lg:block">
+                Receive payment, pay staff, invoices or supplies. We<br />
+                can seamlessly integrate a solution for your business<br />
+                whenever you want to use it
+              </p>
+
+
+
+  <!-- Center the button within the grid row -->
+  <div class="flex items-center justify-center">
+    <button class="bg-[#c3f53c] m-3 rounded-full text-xs p-2.5 sm:text-base sm:p-4 sm:mt-5">
+      Business <i class="fa-solid fa-arrow-right ml-2.5"></i>
+    </button>
+  </div>
+
+  <!-- Image sticks to the bottom of the container -->
+  <div id="business-frame" class="self-end">
+    <img src="./assets/Business-Frame.svg" alt="business-frame" class="w-full" />
+  </div>
+</div>
