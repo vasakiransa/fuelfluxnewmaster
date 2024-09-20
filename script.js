@@ -4,11 +4,15 @@ function handleMenu() {
 }
 
 function openModal() {
-  document.getElementById("productsModal").classList.remove("hidden");
+  const modal = document.getElementById("productsModal");
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
 }
 
 function closeModal() {
-  document.getElementById("productsModal").classList.add("hidden");
+  const modal = document.getElementById("productsModal");
+  modal.classList.remove("flex");
+  modal.classList.add("hidden");
 }
 
 function showPersonal() {
@@ -35,9 +39,13 @@ function toggleFAQ(id) {
 }
 
 function openTermsModal() {
-  document.getElementById("termsModal").classList.remove("hidden");
+  const modal = document.getElementById("termsModal");
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
 }
 
 function closeTermsModal() {
-  document.getElementById("termsModal").classList.add("hidden");
+  const modal = document.getElementById("termsModal");
+  modal.classList.remove("flex");
+  modal.classList.add("hidden");
 }
