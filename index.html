@@ -33,11 +33,10 @@
             >Products <i class="fa regular fa-angle-down"></i>
           </a>
         </li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="#Footer-Contact">Contact Us</a></li>
         <li>
-          <a href="#">FAQ <i class="fa regular fa-angle-down"></i> </a>
+          <a href="#Lear-More-Redr">FAQ </a>
         </li>
-        <li><a href="#">About Us</a></li>
       </ul>
 
       <!-- Modal for Products -->
@@ -78,8 +77,17 @@
             </button>
           </div>
 
+          <!-- Current Modal Indicator -->
+          <div
+            id="currentModalIndicator"
+            class="text-lg font-semibold text-[#002C15] mb-4"
+          >
+            <!-- This will dynamically update based on which form is open -->
+          </div>
+
           <!-- Personal Form -->
           <div id="personalForm" class="space-y-4">
+            <p class="text-lg font-semibold">Personal Inquiry Form</p>
             <input
               type="text"
               placeholder="Name"
@@ -106,6 +114,7 @@
 
           <!-- Businesses Form -->
           <div id="businessForm" class="hidden space-y-4">
+            <p class="text-lg font-semibold">Business Inquiry Form</p>
             <input
               type="text"
               placeholder="Name"
@@ -164,17 +173,23 @@
               href="#"
               onclick="openModal()"
               class="text-[#002C15] hover:text-white"
+              onclick="handleMenu()"
               >Products</a
             >
           </li>
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white">Contact Us</a>
+            <a href="#Logo-Footer" class="text-[#002C15] hover:text-white"
+              >Contact Us</a
+            >
           </li>
+
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white">FAQ</a>
-          </li>
-          <li>
-            <a href="#" class="text-[#002C15] hover:text-white">About Us</a>
+            <a
+              href="#Lear-More-Redr"
+              class="text-[#002C15] hover:text-white"
+              onclick="handleMenu()"
+              >FAQ</a
+            >
           </li>
         </ul>
         <!-- Optional: Social Media Icons -->
@@ -348,6 +363,7 @@
 
               <button
                 class="bg-[#c3f53c] m-3 rounded-full p-2.5 text-xs sm:text-base sm:p-4 sm:mt-5 md:text-lg"
+                onclick="openPersonalForm()"
               >
                 Personal <i class="fa-solid fa-arrow-right ml-2"></i>
               </button>
@@ -401,6 +417,7 @@
 
               <button
                 class="bg-[#c3f53c] m-3 rounded-full text-xs p-2.5 sm:text-base sm:p-4 sm:mt-5"
+                onclick="openBusinessForm()"
               >
                 Business<i class="fa-solid fa-arrow-right ml-2.5"></i>
               </button>
@@ -426,13 +443,13 @@
           <div id="Left-Content">
             <span
               class="font-graphik-medium text-[#808080] text-xs underline decoration-[#c3f53c] sm:text-base lg:text-xl"
-              >Why FuelFlux?</span
+              >Why Fuel Flux?</span
             >
             <div class="my-2">
               <h1
                 class="text-[#002c15] font-graphik-medium font-semibold text-lg leading-tight sm:text-3xl md:text-4xl lg:text-6xl lg:my-5"
               >
-                We are the first Fuel <br />
+                We are the first fuel <br />
                 booking provider
               </h1>
             </div>
@@ -446,12 +463,14 @@
               </div>
             </div>
             <div class="mt-3 sm:mt-7 lg:mt-10">
+              <!-- 
               <button
                 class="text-xs bg-[#c3f53c] rounded-full p-2 md:p-4 md:text-base lg:p-10 lg:text-xl lg:py-4"
               >
                 Create Account
                 <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
               </button>
+               -->
             </div>
           </div>
           <div id="right-side" class="flex items-center mt-11 lg:mt-0">
@@ -819,6 +838,7 @@
             </div>
             <div class="sm:mt-2 md:mt-4 lg:mt-5">
               <button
+                id="Lear-More-Redr"
                 class="text-[0.5rem] sm:text-xs bg-[#c3f53c] rounded-full p-2 md:p-3 md:text-base lg:px-5 lg:text-2xl lg:py-3"
               >
                 Learn More
@@ -877,7 +897,7 @@
 
           <!-- Right Section: 70% of the width (FAQ Section) -->
           <div class="md:col-span-7 bg-white p-6 lg:col-span-7">
-            <div class="faq-item w-full">
+            <div id="FAQ-Redr" class="faq-item w-full">
               <div
                 id="FAQ-1"
                 class="border-solid border-2 border-[#EFF3EF] rounded-lg flex justify-center flex-col p-3 max-w-lg mx-auto"
@@ -1037,7 +1057,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
       <!-- Logo -->
       <div id="Logo-Footer">
-        <img src="./assets/ogo.svg" alt="Company Logo" class="w-32" />
+        <img src="./assets/Logo.svg" alt="Company Logo" class="w-32" />
       </div>
 
       <!-- Product -->
@@ -1077,7 +1097,12 @@
           </li>
 
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white">Contact Us</a>
+            <a
+              href="#"
+              id="Footer-Contact"
+              class="text-[#002C15] hover:text-white"
+              >Contact Us</a
+            >
           </li>
         </ul>
       </div>
