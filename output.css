@@ -675,10 +675,6 @@ video {
   margin-left: 0.625rem;
 }
 
-.ml-3{
-  margin-left: 0.75rem;
-}
-
 .ml-4{
   margin-left: 1rem;
 }
@@ -856,10 +852,6 @@ video {
   max-width: 20rem;
 }
 
-.flex-1{
-  flex: 1 1 0%;
-}
-
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -920,6 +912,10 @@ video {
   gap: 1rem;
 }
 
+.gap-6{
+  gap: 1.5rem;
+}
+
 .space-x-4 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -976,11 +972,6 @@ video {
   border-style: solid;
 }
 
-.border-\[\#002c15\]{
-  --tw-border-opacity: 1;
-  border-color: rgb(0 44 21 / var(--tw-border-opacity));
-}
-
 .border-\[\#1c432f\]{
   --tw-border-opacity: 1;
   border-color: rgb(28 67 47 / var(--tw-border-opacity));
@@ -1014,11 +1005,6 @@ video {
 .bg-\[\#002c15\]{
   --tw-bg-opacity: 1;
   background-color: rgb(0 44 21 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#1c432f\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 67 47 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#b5dda6\]{
@@ -1064,10 +1050,6 @@ video {
 .bg-gray-200{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.bg-transparent{
-  background-color: transparent;
 }
 
 .bg-white{
@@ -1357,11 +1339,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:bg-\[\#145029\]:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(20 80 41 / var(--tw-bg-opacity));
-}
-
 .hover\:text-\[\#c2f43c\]:hover{
   --tw-text-opacity: 1;
   color: rgb(194 244 60 / var(--tw-text-opacity));
@@ -1468,10 +1445,6 @@ video {
 
   .sm\:w-2\/4{
     width: 50%;
-  }
-
-  .sm\:w-7{
-    width: 1.75rem;
   }
 
   .sm\:w-auto{
@@ -1685,20 +1658,12 @@ video {
     height: 1.75rem;
   }
 
-  .md\:h-9{
-    height: 2.25rem;
-  }
-
   .md\:h-96{
     height: 24rem;
   }
 
   .md\:w-2\/5{
     width: 40%;
-  }
-
-  .md\:w-9{
-    width: 2.25rem;
   }
 
   .md\:max-w-sm{
