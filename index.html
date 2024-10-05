@@ -9,6 +9,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "_N9xXw-Rv4_IjLrhe",
+        });
+      })();
+    </script>
   </head>
   <body>
     <!-- Nav Bar -->
@@ -89,25 +100,42 @@
           <div id="personalForm" class="space-y-4">
             <p class="text-lg font-semibold">Personal Inquiry Form</p>
             <input
+              id="personalName"
               type="text"
               placeholder="Name"
               class="w-full p-2 border border-gray-300 rounded-lg"
             />
             <input
+              id="personalEmail"
               type="email"
               placeholder="Email"
               class="w-full p-2 border border-gray-300 rounded-lg"
             />
             <input
+              id="personalTel"
               type="tel"
               placeholder="Contact Number"
               class="w-full p-2 border border-gray-300 rounded-lg"
             />
             <textarea
+              id="personalFeedback"
               placeholder="Feedback/Suggestion"
               class="w-full p-2 border border-gray-300 rounded-lg"
             ></textarea>
-            <button class="bg-[#002C15] text-white p-3 rounded-lg">
+            <button
+              type="submit"
+              class="bg-[#002C15] text-white p-3 rounded-lg"
+              onclick="sendMail(event)"
+              <!--
+              Pass
+              event
+              to
+              prevent
+              default
+              form
+              submission
+              --
+            >
               Submit
             </button>
           </div>
@@ -116,30 +144,45 @@
           <div id="businessForm" class="hidden space-y-4">
             <p class="text-lg font-semibold">Business Inquiry Form</p>
             <input
+              id="businessName"
               type="text"
               placeholder="Name"
               class="w-full p-2 border border-gray-300 rounded-lg"
             />
             <input
+              id="businessEmail"
               type="email"
               placeholder="Email"
               class="w-full p-2 border border-gray-300 rounded-lg"
             />
             <input
+              id="businessTel"
               type="tel"
               placeholder="Contact Number"
               class="w-full p-2 border border-gray-300 rounded-lg"
             />
             <input
+              id="businessType"
               type="text"
               placeholder="Business Type"
               class="w-full p-2 border border-gray-300 rounded-lg"
             />
             <textarea
+              id="businessInquiryDetails"
               placeholder="Inquiry Details"
               class="w-full p-2 border border-gray-300 rounded-lg"
             ></textarea>
-            <button class="bg-[#002C15] text-white p-3 rounded-lg">
+            <button
+              type="submit"
+              class="bg-[#002C15] text-white p-3 rounded-lg"
+              onclick="sendBusinessMail(event)"
+              <!--
+              Call
+              sendBusinessMail()
+              when
+              clicked
+              --
+            >
               Submit
             </button>
           </div>
@@ -1066,17 +1109,17 @@
         <ul>
           <li>
             <a
-              href="#"
+              href="javascript:void(0)"
               class="text-[#002C15] hover:text-white"
-              onclick="openModal()"
+              onclick="openPersonalForm()"
               >For Personal</a
             >
           </li>
           <li>
             <a
-              href="#"
+              href="javascript:void(0)"
               class="text-[#002C15] hover:text-white"
-              onclick="openModal()"
+              onclick="openBusinessForm()"
               >For Business</a
             >
           </li>
@@ -1088,8 +1131,51 @@
         <h3 class="text-lg font-semibold mb-4 text-[#1C432F]">Company</h3>
         <ul>
           <li>
-            <a href="#" class="text-[#002C15] hover:text-white">About Us</a>
+            <a
+              href="javascript:void(0)"
+              class="text-[#002C15] hover:text-white"
+              onclick="openAboutUsModal()"
+              >About Us</a
+            >
           </li>
+          <!-- About Us Modal -->
+          <div
+            id="aboutUsModal"
+            class="hidden fixed inset-0 z-50 bg-black bg-opacity-50 justify-center items-center"
+          >
+            <div
+              class="bg-white w-11/12 sm:w-1/2 rounded-lg shadow-lg p-8 max-h-[90vh] overflow-y-auto"
+            >
+              <!-- Modal Header -->
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold text-[#1C432F]">About Us</h2>
+                <button
+                  class="text-[#002C15] hover:text-red-500"
+                  onclick="closeAboutUsModal()"
+                >
+                  <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+              </div>
+
+              <!-- Modal Content -->
+              <p class="text-lg text-[#1C432F] mb-4">
+                Fuel Flux is an innovative startup transforming how people fuel
+                their vehicles. With a focus on convenience and efficiency, we
+                offer on-demand refuelling services through a user-friendly
+                mobile app. Vehicle owners can easily schedule and manage fuel
+                deliveries, eliminating the need for long queues and
+                inconvenient fuelling stations. Our mission is to provide a
+                reliable, eco-friendly alternative to traditional refuelling
+                methods, saving customers valuable time while enhancing their
+                overall experience. Committed to sustainability, Fuel Flux
+                promotes energy-efficient solutions while ensuring top-tier
+                customer satisfaction, making refuelling seamless and
+                stress-free. We also provide AI models for the automation of
+                stations.
+              </p>
+            </div>
+          </div>
+
           <li>
             <a href="#" class="text-[#002C15] hover:text-white"
               >Customer Story</a
@@ -1097,12 +1183,15 @@
           </li>
 
           <li>
+            <!-- Clicking will open the user's mail app and hovering will show the email -->
             <a
-              href="#"
+              href="mailto:info@fuelflux.in"
               id="Footer-Contact"
               class="text-[#002C15] hover:text-white"
-              >Contact Us</a
+              title="info@fuelflux.in"
             >
+              Contact Us
+            </a>
           </li>
         </ul>
       </div>
@@ -1111,13 +1200,17 @@
       <div id="Resources">
         <h3 class="text-lg font-semibold mb-4 text-[#1C432F]">Resources</h3>
         <ul>
-          <li><a href="#" class="text-[#002C15] hover:text-white">FAQ</a></li>
+          <li>
+            <a href="#Lear-More-Redr" class="text-[#002C15] hover:text-white"
+              >FAQ</a
+            >
+          </li>
           <li>
             <a href="#" class="text-[#002C15] hover:text-white">Help Center</a>
           </li>
           <li>
             <a
-              href="#"
+              href="javascript:void(0)"
               class="text-[#002C15] hover:text-white"
               onclick="openTermsModal()"
               >Terms and Privacy</a
@@ -1217,45 +1310,36 @@
 
     <!-- Footer Bottom Section -->
     <div
-      class="bg-[#f2f5f7] py-6 px-10 flex flex-col sm:flex-row justify-between items-center"
+      class="bg-[#f2f5f7] py-6 px-10 flex flex-col gap-4 justify-center items-center"
     >
       <!-- Left Section: Copyright and Made in Digifrills -->
       <div
         class="text-center sm:text-left gap-3 lg:gap-6 md:flex sm:justify-between"
       >
-        <p class="text-sm lg:text-xl text-[#1c432f]">Copyright@2024BrainFlow</p>
-        <p class="text-sm lg:text-xl text-[#1c432f]">Made in Digifrills</p>
+        <p class="text-sm lg:text-xl text-[#1c432f]">
+          © 2024 Fuel Flux | In Collaboration with Digifrills
+        </p>
       </div>
 
       <!-- Social Media Icons -->
-      <div class="flex gap-4 mt-4 sm:mt-0 lg:gap-10">
-        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
-          <i class="fab fa-facebook-f text-xl lg:text-4xl"></i>
-        </a>
-        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
+      <div class="flex gap-6 mt-4 sm:mt-0 lg:gap-10">
+        <!-- Instagram Icon -->
+        <a
+          href="https://www.instagram.com/fuelflux_in?igsh=MWxrZ3YwZ2JpZHRrZQ"
+          target="_blank"
+          class="text-[#1c432f] hover:text-[#c2f43c]"
+        >
           <i class="fab fa-instagram text-xl lg:text-4xl"></i>
         </a>
-        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
-          <i class="fab fa-telegram text-xl lg:text-4xl"></i>
-        </a>
-        <a href="#" class="text-[#1c432f] hover:text-[#c2f43c]">
-          <i class="fab fa-twitter text-xl lg:text-4xl"></i>
-        </a>
-      </div>
 
-      <!-- Language Selector -->
-      <div class="mt-4 gap-3 sm:mt-0 flex">
-        <select
-          class="flex-1 border-2 border-[#002c15] text-[#1c432f] bg-transparent p-3 lg:px-10 rounded-full font-semibold"
+        <!-- LinkedIn Icon -->
+        <a
+          href="https://www.linkedin.com/company/104667913/admin/dashboard/"
+          target="_blank"
+          class="text-[#1c432f] hover:text-[#c2f43c]"
         >
-          <option class="font-semibold">English</option>
-          <!-- Add more languages here -->
-        </select>
-        <button
-          class="w-5 h-5 sm:w-7 sm:h-7 md:h-9 md:w-9 bg-[#1c432f] rounded-full text-white flex items-center justify-center hover:bg-[#145029] ml-3"
-        >
-          <i class="fa-solid fa-angle-up lg:text-lg"></i>
-        </button>
+          <i class="fab fa-linkedin text-xl lg:text-4xl"></i>
+        </a>
       </div>
     </div>
   </footer>
